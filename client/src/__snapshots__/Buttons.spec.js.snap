@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons Component should render 1`] = `
+<div
+  className="buttons"
+>
+  <span
+    className="qty"
+  >
+    Qty:
+     
+  </span>
+  <select
+    id="quantity"
+  />
+  <div
+    className="cart"
+  >
+    <button
+      className="addToCart"
+      type="button"
+    >
+      <img
+        alt="cart"
+        className="cartimage"
+        src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/amazoncart3.png"
+      />
+       Add To Cart
+    </button>
+  </div>
+  <div
+    className="buyNow"
+  >
+    <button
+      className="buy"
+      type="button"
+    >
+      <img
+        alt="buynow"
+        className="buyimage"
+        src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/amazonbuynow.png"
+      />
+       Buy Now
+    </button>
+  </div>
+</div>
+`;

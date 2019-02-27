@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details Component should render 1`] = `
+<div
+  className="tooltip"
+>
+  <span
+    className="details"
+    onClick={[Function]}
+  >
+    Details
+  </span>
+  <img
+    alt="drop down arrow"
+    className="arrow"
+    src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/amazonarrow.png"
+  />
+</div>
+`;

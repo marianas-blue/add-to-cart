@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToList Component should render 1`] = `
+<div
+  className="addToList"
+>
+  <div
+    className="list"
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <div
+      className="list-header"
+      onClick={[Function]}
+    >
+      <span
+        className="list-header-text"
+      >
+        Add to your list
+      </span>
+      <button
+        className="exitButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "border": "1px solid orange",
+            "boxShadow": "0 0 3px #ff8000",
+          }
+        }
+        type="button"
+        value="x"
+      >
+        x
+      </button>
+    </div>
+    <div
+      className="list-content"
+      onClick={[Function]}
+    >
+      <div
+        className="listOwner"
+      >
+        <span
+          className="ownerText"
+        >
+          This list is for
+        </span>
+        <select
+          className="ownerType"
+        >
+          <option>
+            You
+          </option>
+          <option>
+            Someone else
+          </option>
+        </select>
+      </div>
+      <div
+        className="choose"
+      >
+        <span
+          className="chooseText"
+        >
+          Choose a list type
+        </span>
+        <div
+          className="list-types"
+        >
+          <div
+            className="shopping-list"
+          >
+            <div
+              className="shopping-list-inner"
+            >
+              <input
+                name="radio"
+                type="radio"
+              />
+               
+              <h3
+                className="shopping-list-text"
+              >
+                Shopping List
+              </h3>
+              <br />
+              <div
+                className="shopping-list-text2"
+              >
+                <span>
+                  Add items you want to shop for.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="wish-list"
+          >
+            <div
+              className="wish-list-inner"
+            >
+              <input
+                name="radio"
+                type="radio"
+              />
+               
+              <h3
+                className="wish-list-text"
+              >
+                Wish List
+              </h3>
+              <br />
+              <div
+                className="wish-list-text2"
+              >
+                <span>
+                  Let people know what gifts you'd like.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="idea-list"
+          >
+            <div
+              className="idea-list-inner"
+            >
+              <input
+                name="radio"
+                type="radio"
+              />
+               
+              <h3
+                className="idea-list-text"
+              >
+                Idea List
+              </h3>
+              <br />
+              <div
+                className="idea-list-text2"
+              >
+                <span>
+                  Make a list for the Amazon community.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="list-names-section"
+      >
+        <div
+          className="list-name"
+        >
+          <span
+            className="list-name-text"
+          >
+            List name
+          </span>
+          <input
+            className="list-name-input"
+            type="text"
+            value="Shopping List"
+          />
+          <input
+            type="checkbox"
+          />
+          Keep purchased items on your list
+        </div>
+        <div
+          className="privacy"
+        >
+          <span
+            className="privacy-text"
+          >
+            Privacy
+          </span>
+          <br />
+          <button
+            className="private"
+            type="button"
+            value="Private"
+          >
+            Private
+          </button>
+          <button
+            className="public"
+            type="button"
+            value="Public"
+          >
+            Public
+          </button>
+          <span
+            className="personal"
+          >
+            Only you can see this list.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="list-footer"
+      onClick={[Function]}
+    >
+      <button
+        className="cancel"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        className="createList"
+        type="button"
+      >
+        Create List
+      </button>
+    </div>
+  </div>
+  <input
+    className="addButton"
+    onClick={[Function]}
+    type="submit"
+    value="Add To List"
+  />
+</div>
+`;

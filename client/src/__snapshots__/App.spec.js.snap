@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should render 1`] = `
+<div
+  className="body"
+  onClick={[Function]}
+>
+  <div
+    className="container"
+  >
+    <div
+      className="price"
+    >
+       $
+       
+    </div>
+    <div
+      className="freeshipping"
+    >
+      &
+       
+      <b>
+        FREE Shipping
+      </b>
+       
+      on orders over $25 shipped by Amazon.
+       
+      <DetailsBox />
+      <Dates />
+      <Buttons />
+      <DeliverModal />
+      <AddToListModal />
+    </div>
+  </div>
+</div>
+`;

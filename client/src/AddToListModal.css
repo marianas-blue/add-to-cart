@@ -1,0 +1,272 @@
+.addToList{
+    padding-top: 15px;
+}
+
+.addButton{
+    width:100%;
+    padding: 10px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    border-width: 1px;
+    text-align: left;
+    font-size: 13px;
+}
+
+
+.list{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.listHeader{
+    text-align: left;
+    background: linear-gradient(to bottom,#f7f7f7,#eaeaea);
+    padding:10px 13px;
+    line-height: 1.9;
+    font-weight: bold;
+    display : block;
+    color: #111;
+    font-size: 13px;
+    margin: auto;
+    width: 40%;
+    border: 1px solid #e1e1e1;
+    z-index: 100;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+.listHeaderText{
+    color: #303030;
+}
+
+.exitButton{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 15px;
+    background: linear-gradient(to bottom,#f7f7f7,#eaeaea);
+    text-align: center;
+}
+
+.listContent{
+    background-color: #fff;
+    padding:10px 14px;
+    display: block;
+    width: 40%;
+    margin: auto;
+}
+
+.ownerText{
+    display:block;
+    font-weight: bold;
+}
+
+.ownerType{
+    padding-left: 10px;
+    width: 148px;
+    height: 29px;
+    -webkit-appearance: none;
+    background: url(https://s3.us-east-2.amazonaws.com/chrisfakephotos/amazonarrow.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: #f1f2f5;
+}
+
+.choose{
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top: 10px;
+    margin-top: 10px;
+    padding-bottom: 25px;
+}
+
+.chooseText{
+    color: #1e1e1e;
+    font-weight: bold;
+}
+
+
+.listTypes{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.darkCircle{
+    width: 15px;
+    height: 15px;
+    padding-top:4px;
+}
+/* input[type="radio"]:after{
+    width: 15px;
+    height: 15px;
+    top: -2px;
+    left:-5px;
+    border-radius: 15px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display:inline-block;
+    border: 1px solid black;
+    visibility:visible;
+}
+
+input[type="radio"]:checked:after{
+    width: 10px;
+    height: 10px;
+    top: -2px;
+    left:-2px;
+    border-radius: 8px;
+    position:relative;
+    background-color: orange;
+    content: '';
+    display:inline-block;
+    visibility:visible;
+} */
+
+
+
+.shoppingList{
+    border: 1px #ddd solid;
+    height: 100px;
+    width: 200px;
+    border-radius:3px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.wishList{
+    border: 1px #ddd solid;
+    height: 100px;
+    width: 200px;
+    border-radius:4px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.ideaList{
+    border: 1px #ddd solid;
+    height: 100px;
+    width: 200px;
+    border-radius:3px;
+    padding: 10px;
+}
+
+.shoppingListText, .wishListText, .ideaListText{
+    color: #111;
+    display: inline; 
+}
+
+
+
+.shoppingListText2, .wishListText2, .ideaListText2 {
+    color: #76767E;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+
+.listNamesSection{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.listName{
+    width: 300px;
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.listNameText{
+   color: #111;
+   display: block;
+   font-weight: bold;
+}
+
+.listNameInput{
+    border-radius: 4px;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.privacyText{
+    color: #111;
+    font-weight: bold;
+ }
+
+.privacy{
+    width: 300px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+
+.private{
+    width: 64px;
+    height: 29px;
+    border: 1px solid #d4d6d9;
+    border-radius: 4px;
+    margin-right: 5px;
+    background-color: #fef8f2;
+    border: 1px solid #f7cca6;
+    font-weight: bold;
+}
+
+.public{
+    width: 64px;
+    height: 29px;
+    border: 1px solid #d4d6d9;
+    border-radius: 4px;
+}
+
+.personal{
+    display: block;
+    color: #acacac;
+}
+
+.listFooter{
+    text-align: right;
+    background: linear-gradient(to bottom,#f7f7f7,#eaeaea);
+    width: 40%;
+    border-radius: 0 0 4px 4px;
+    margin: auto;
+    display: block;
+    padding:18px 14px 35px 14px;
+}
+
+.createList{
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    width: 83px;
+    height: 29px;
+    border-radius: 4px;
+    border-color: #a88734 #9c7e31 #846a29;
+    font-size: 10px;
+}
+
+.cancel{
+    width: 60px;
+    height: 29px;
+    background: linear-gradient(to bottom,#f3f3f3,#fff);
+    border-radius: 4px;
+    margin-right: 5px;
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    font-size: 10px;
+}
