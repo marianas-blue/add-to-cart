@@ -124,11 +124,11 @@
 
   - Required:
     - **id**: [ integer ]; id of product whose quantity will be altered
-    - **name**: [ string ]; name of product whose quantity will be altered
 
   **Data Parameters**
 
   - Required:
+    - **name**: [ string ]; name of product whose quantity will be altered
     - **quantity**: [ integer ]; number by which to change the quantity of product available
 ****
 
