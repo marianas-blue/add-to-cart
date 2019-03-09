@@ -62,3 +62,6 @@ typings/
 
 # CSVs
 *.csv
+
+# Configs
+newrelic.js

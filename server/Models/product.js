@@ -22,7 +22,7 @@ module.exports = {
         const addProductsText = `INSERT INTO cart_items (cart_id, product_id, quantity) \
         SELECT id, ${productId}, ${quantity} FROM carts WHERE user_id = ${userId};`;
         await client.query(addProductsText);
-        const updateProductText = `UPDATE products SET quantity = quantity + ${quantity} WHERE products.id = ${productId}`;
+        const updateProductText = `UPDATE products SET quantity = quantity - ${quantity} WHERE products.id = ${productId}`;
         await client.query(updateProductText);
         await client.query('COMMIT');
       } catch (e) {
