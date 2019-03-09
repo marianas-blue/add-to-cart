@@ -62,28 +62,6 @@ app.use('*', (req, res) => {
   res.sendFile(`/client/dist/index.html`, {'root': `${__dirname}/../`});
 });
 
-
 const PORT = 3002;
 
 app.listen(PORT, console.log('listening at 3002'));
-// app.put('/product/:id', (req, res) => {
-//   const idToSearch = req.params.id;
-//   addToCart(idToSearch, (err, data) => {
-//     if (err) {
-//       res.status(400).send();
-//       return;
-//     }
-//     res.status(200).send(data);
-//   });
-// });
-
-// app.get('/addtocart', (req, res) => {
-//   itemsInCart((err, data) => {
-//     if (err) {
-//       res.status(400).send();
-//       return;
-//     }
-//     res.status(200).send(data);
-//   });
-// });
-
