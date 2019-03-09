@@ -15,10 +15,21 @@ app.use(express.static(`${__dirname}/../client/dist`));
 
 
 app.get('/api/product/:id', (req, res) => {
-  const idToSearch = req.params.id;
-  Product.getProduct(idToSearch, (err, data) => {
+  Product.getProduct(req.params.id, (err, data) => {
     if (err) {
-      res.status(400).send();
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    res.status(200).send(data);
+  });
+});
+
+app.get('/api/users/:userId', (req, res) => {
+  Product.getUserInfo(req.params.userId, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
       return;
     }
     res.status(200).send(data);
@@ -33,6 +44,17 @@ app.post('/api/cart', (req, res) => {
       return;
     }
     res.status(201).send();
+  })
+});
+
+app.get('/api/cart/:userId', (req, res) => {
+  Product.getCart(req.params.userId, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    res.status(200).send(data);
   })
 });
 
