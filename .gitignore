@@ -65,3 +65,4 @@ typings/
 
 # Configs
 newrelic*.*
+config.js
