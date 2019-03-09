@@ -71,7 +71,7 @@
 ****
 ### Add Item to Cart
 
-  *Add a product to a user's cart*
+  *Add a product to a user's cart and update quantity of product available*
 
   ```js
   POST /api/cart
@@ -87,23 +87,22 @@
     - **quantity**: [ integer ]; quantity of product to be added to the cart
 
 ****
-### Product Update
+### Fetch Cart Contents
 
-  *Update the available quantity of a product*
+  *Get the current contents of a user's cart*
+
   ```js
-  PUT /api/product/:id
+  GET /api/cart
   ```
   **URL Parameters**
-
-  - Required:
-    - **id**: [ integer ]; id of product whose quantity will be altered
+  - None
 
   **Data Parameters**
 
   - Required:
-    - **quantity**: [ integer ]; number by which to change the quantity of product available
-****
+    - **userId**: [ integer ]; userID whose cart will be fetched
 
+****
 
 
 ## Requirements
