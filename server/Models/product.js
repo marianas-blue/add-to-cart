@@ -20,7 +20,8 @@ module.exports = {
         const addCartText = `INSERT INTO carts (user_id) VALUES (${userId}) ON CONFLICT (user_id) DO NOTHING;`;
         await client.query(addCartText);
         const addProductsText = `INSERT INTO cart_items (cart_id, product_id, quantity) \
-        SELECT id, ${productId}, ${quantity} FROM carts WHERE user_id = ${userId};`;
+        SELECT id, ${productId}, ${quantity} FROM carts WHERE user_id = ${userId} \
+        ON CONFLICT (cart_id, product_id) DO UPDATE SET quantity = EXCLUDED.quantity + cart_items.quantity;`;
         await client.query(addProductsText);
         const updateProductText = `UPDATE products SET quantity = quantity - ${quantity} WHERE products.id = ${productId}`;
         await client.query(updateProductText);
