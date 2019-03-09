@@ -1,13 +1,14 @@
 const faker = require('faker');
 const fs = require('fs');
 const { Writable, Readable } = require('stream');
+const TimeUuid = require('cassandra-driver').types.TimeUuid;
 
 class InStream extends Readable {
   constructor(options) {
     super(options);
     this.id = 1;
     this.totalEntries = 5000000; // 5 million
-    this.data = ['id, username, isPrimeMember, [shipping addresses]'];
+    this.data = ['username,isprimemember,userid,addresses'];
   }
 
   _read() {
@@ -15,21 +16,30 @@ class InStream extends Readable {
       this.push(null);
     } else {
       for (let i = 0; i < 10000; i++) {
-        const user = [this.id, faker.internet.userName(), faker.random.boolean()];
+        const user = [faker.internet.userName()];
+        user.push(faker.random.boolean());
+        user.push(TimeUuid.now());
+
+        let addressesString = '"{';
         const addresses = [];
         for (let i = 0; i < Math.random() * 3; i++ ) {
-          addresses.push(faker.name.findName());
-          addresses.push(faker.address.streetAddress());
-          addresses.push(faker.address.city());
-          addresses.push(faker.address.stateAbbr());
-          addresses.push(faker.address.zipCode());
-          addresses.push(faker.phone.phoneNumber());
+          let fullname = faker.name.findName().replace(/(['"])/g, '');
+          addresses.push(`'${fullname}': {fullname: '${fullname}', street: '${faker.address.streetAddress().replace(/(['"])/g, '')}', city: '${faker.address.city().replace(/(['"])/g, '')}', state: '${faker.address.stateAbbr()}', zipcode: '${faker.address.zipCode()}', phone: '${faker.phone.phoneNumberFormat()}'}`);
+          // addresses.push(faker.address.streetAddress());
+          // addresses.push(faker.address.city());
+          // addresses.push(faker.address.stateAbbr());
+          // addresses.push(faker.address.zipCode());
+          // addresses.push(faker.phone.phoneNumber());
         }
-        user.push(addresses);
+        addressesString += addresses.join(',');
+        addressesString += '}"';
+        user.push(addressesString);
+        
         this.data.push(user.join(','));
         this.id++;
       }
       this.push(this.data.join('\n'));
+      this.push('\n');
       this.data = [];
     }
   }

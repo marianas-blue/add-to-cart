@@ -36,7 +36,6 @@
   - **Content:** 
     <pre>
     {
-      id: <em>INTEGER</em> - [product id]
       name: <em>STRING</em> - [product name]
       price: <em>NUMBER</em> - [product price]
       quantity: <em>INTEGER</em> - [quantity of product available]
@@ -50,12 +49,12 @@
   *Fetch info about a user*
 
   ```js
-  GET /api/users/:username
+  GET /api/users/:userId
   ```
   **URL Parameters**
 
   - Required:     
-    - **username**: [ string ]; username of user for which to fetch info
+    - **userId**: [ int ]; user ID of user for which to fetch info
 
   **Data Parameters**
   - None
@@ -64,55 +63,29 @@
   - **Content:** 
     <pre>
     {
-      shippingZipcode: <em>INTEGER</em> - [zipcode for shipping address]
+      username: <em>STRING</em> - [username]
       isPrimeMember: <em>BOOLEAN</em> - [status of Prime membership]
-      cart: [
-        <b>PRODUCT</b> - [product currently in cart for purchase]
-      ]
-      lists: [
-        <b>LIST</b> - [list of products saved for future purchase]
-      ]
     }
     </pre>
   
 ****
-### Add Item to List
+### Add Item to Cart
 
-  *Add a product to a user's list*
+  *Add a product to a user's cart*
 
   ```js
-  POST /api/users/:username/:list
+  POST /api/cart
   ```
   **URL Parameters**
-
-  - Required:     
-    - **username**: [ string ]; username whose list will be altered
-    - **list**: [ string ]; name of list to which item will be added
+  - None
 
   **Data Parameters**
   
-  - Required:     
-    - **id**: [ integer ]; id of product to be added to the list
-    - **name**: [ string ]; name of product to be added to the list
-****
-### Add Item to Cart
-
-  *Add a product to the cart*
-
-  ```js
-  POST /api/users/:username/cart
-  ```
-  **URL Parameters**
-
   - Required:
-    - **username**: [ string ]; username whose cart will be altered
-
-  **Data Parameters**
-
-  - Required:
-    - **id**: [ integer ]; id of product to be added to the cart
-    - **name**: [ string ]; name of product to be added to the cart
+    - **userId**: [ integer ]; userID whose cart will be altered     
+    - **productId**: [ integer ]; id of product to be added to the cart
     - **quantity**: [ integer ]; quantity of product to be added to the cart
+
 ****
 ### Product Update
 
@@ -128,7 +101,6 @@
   **Data Parameters**
 
   - Required:
-    - **name**: [ string ]; name of product whose quantity will be altered
     - **quantity**: [ integer ]; number by which to change the quantity of product available
 ****
 

@@ -6,19 +6,20 @@ class InStream extends Readable {
   constructor(options) {
     super(options);
     this.id = 1;
-    this.data = ['id, name, price, quantityAvailable, isPrimeEligible, location'];
+    this.data = ['id, name, price, quantity, isPrimeEligible, zipcode, seller'];
   }
 
   _read() {
-    if (this.id >= 10000000) {
+    if (this.id >= 11000000) {
       this.push(null);
     } else {
-      for (let i = 0; i < 10000; i++) {
-        const product = [this.id, 'Product ' + this.id, (Math.random() * 100).toFixed(2), Math.floor(Math.random() * 1000), faker.random.boolean(), faker.address.zipCode(), faker.company.companyName()];
-        this.data.push(product.join(','));
+      for (let i = 0; i < 50000; i++) {
+        const product = [this.id, 'Product ' + this.id, (Math.random() * 100).toFixed(2), Math.floor(Math.random() * 1000), faker.random.boolean(), faker.address.zipCode(), faker.company.companyName().replace(/'/g, "''")];
+        this.data.push(product.join('|'));
         this.id++;
       }
       this.push(this.data.join('\n'));
+      this.push('\n');
       this.data = [];
     }
   }
