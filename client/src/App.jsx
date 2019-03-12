@@ -13,7 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // price: '',
+      price: '',
     };
     this.child = React.createRef();
     this.clickOutside = this.clickOutside.bind(this);
@@ -22,15 +22,15 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    // const urlArray = document.URL.split('/');
-    // const productID = Number(urlArray[urlArray.length - 1]);
-    // axios.get(`/api/product/${productID}`)
-    //   .then((res) => {
-    //     this.setState({ price: res.data[0].price });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    const urlArray = document.URL.split('/');
+    const productID = Number(urlArray[urlArray.length - 1]);
+    axios.get(`/api/cart/product/${productID}`)
+      .then((res) => {
+        this.setState({ price: res.data[0].price });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     this.getData();
   }
@@ -38,7 +38,7 @@ class App extends React.Component {
   getData() {
     const urlArray = document.URL.split('/');
     const productID = Number(urlArray[urlArray.length - 1]);
-    axios.get(`/api/product/${productID}`)
+    axios.get(`/api/cart/product/${productID}`)
       .then((res) => {
         this.setState({ price: res.data[0].price });
       })

@@ -3,19 +3,22 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const Product = require('./Models/product.js');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 
 app.use(express.static(`${__dirname}/../client/dist`));
 
+app.get('/api/cart/bundle', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/dist/bundle.js'));
+});
 
-app.get('/api/product/:id', (req, res) => {
+app.get('/api/cart/product/:id', (req, res) => {
   Product.getProduct(req.params.id, (err, data) => {
     if (err) {
       console.error(err);
@@ -26,7 +29,7 @@ app.get('/api/product/:id', (req, res) => {
   });
 });
 
-app.get('/api/users/:userId', (req, res) => {
+app.get('/api/cart/users/:userId', (req, res) => {
   Product.getUserInfo(req.params.userId, (err, data) => {
     if (err) {
       console.error(err);
