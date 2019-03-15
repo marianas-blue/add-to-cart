@@ -40,8 +40,8 @@ app.get('/api/cart/users/:userId', (req, res) => {
   });
 });
 
-app.post('/api/cart', (req, res) => {
-  Product.addToCart(req.body.userId, req.body.productId, req.body.quantity, (err, data) => {
+app.post('/api/cart/:userId', (req, res) => {
+  Product.addToCart(req.params.userId, req.body.productId, req.body.quantity, (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).send();
@@ -66,6 +66,6 @@ app.use('*', (req, res) => {
   res.sendFile(`/client/dist/index.html`, {'root': `${__dirname}/../`});
 });
 
-const PORT = 3002;
+const PORT = 3000;
 
-app.listen(PORT, console.log('listening at 3002'));
+app.listen(PORT, console.log(`listening at ${PORT} `));
