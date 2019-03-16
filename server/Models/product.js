@@ -17,7 +17,9 @@ module.exports = {
           if (err) {
             callback(err);
           }
-          callback(null, data);
+          cache.set(productId, JSON.stringify(data), () => {
+            callback(null, data);
+          });
         });
       }
     });
