@@ -1,13 +1,25 @@
 const db = require('../../database/db.js');
+const cache = require('../../database/redis.js')
 
 module.exports = {
   getProduct: (productId, callback) => {
-    const queryText = `select name, price, quantity, isprimeeligible, seller from products where products.id = ${productId};`;
-    db.query(queryText, (err, data) => {
+    cache.get(productId, (err, reply) => {
       if (err) {
-        callback(err);
+        console.log('ERR in Redis', err);
+        callback(err, null);
+
+      } else if (reply) {
+        callback(null, reply);
+
+      } else {
+        const queryText = `select name, price, quantity, isprimeeligible, seller from products where products.id = ${productId};`;
+        db.query(queryText, (err, data) => {
+          if (err) {
+            callback(err);
+          }
+          callback(null, data);
+        });
       }
-      callback(null, data);
     });
   },
 
